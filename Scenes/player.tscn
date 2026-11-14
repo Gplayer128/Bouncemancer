@@ -57,7 +57,7 @@ animations = [{
 "speed": 3.5
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=1501933892]
+[node name="player" type="CharacterBody2D" unique_id=1689147481]
 script = ExtResource("1_fkybt")
 projectile = ExtResource("2_8erm5")
 

@@ -9,7 +9,7 @@ var type = 0
 
 func _ready() -> void:
 	type = Global.trampoline_shot_type
-	
+
 
 func _process(delta: float) -> void:
 	if vision.is_colliding():
@@ -17,6 +17,6 @@ func _process(delta: float) -> void:
 		anim_sprite.play("hit")
 	else:
 		anim_sprite.play("fly")
-	
+
 	if vision_2.is_colliding():
 		pass

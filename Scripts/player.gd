@@ -47,7 +47,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func shoot(num):
 	var instance = projectile.instantiate()
-	var direction = player.global_position - get_global_mouse_position()
-	get_parent().add_child(instance)
-	Global.bullet_dir = direction * SPEED
-	Global.trampoline_shot_type = num
+	var bullet_direction = player.global_position - get_global_mouse_position()
+	instance.position = Vector2.(10.0, 0)
+	add_child(instance)
+	#Global.bullet_dir = bullet_direction * SPEED
+	#Global.trampoline_shot_type = num
