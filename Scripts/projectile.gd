@@ -3,7 +3,11 @@ extends Area2D
 @export var SPEED = 1200 # Increased default speed so it's visible
 @export var speed: float = 500.0
 
+var trampoline_inst = preload("res://trampoline.tscn")
+
+var num
 var hit_wall : bool
+var second_anim : bool
 
 @onready var anim_player : AnimatedSprite2D = $AnimatedSprite2D
 
@@ -12,6 +16,8 @@ var spawnPos : Vector2
 var spawnRot : float
 
 func _ready() -> void:
+	num = 0
+	second_anim = false
 	hit_wall = false
 	global_position = spawnPos
 	# Calculate velocity using SPEED and the direction angle
@@ -35,4 +41,12 @@ func _on_body_entered(body: Node2D) -> void:
 		anim_player.play("hit")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	queue_free()
+	if num == 0:
+		position += Vector2(-60.0, 0.0)
+		anim_player.play("hit2")
+		num += 1
+	else:
+		var instantiated_node = trampoline_inst.instantiate()
+		get_tree().current_scene.add_child(instantiated_node)
+		instantiated_node.global_position = global_position
+		queue_free()
