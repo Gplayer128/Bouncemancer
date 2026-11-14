@@ -13,3 +13,12 @@ config_version=5
 config/name="Haven lisbon"
 config/features=PackedStringArray("4.7")
 config/icon="res://Assets/icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
