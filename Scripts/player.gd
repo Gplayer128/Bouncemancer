@@ -10,7 +10,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Restart"):
 		get_tree().reload_current_scene()
 
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
