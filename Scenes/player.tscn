@@ -71,7 +71,7 @@ shape = SubResource("CapsuleShape2D_vgqql")
 [node name="anim_sprite" type="AnimatedSprite2D" parent="." unique_id=513699106]
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_f60y1")
-animation = &"fall"
+animation = &"walk"
 
 [node name="player" type="Marker2D" parent="." unique_id=10134297]
 
