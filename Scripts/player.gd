@@ -5,6 +5,8 @@ extends CharacterBody2D
 const SPEED = 500.0
 const JUMP_VELOCITY = -600.0
 
+@export var projectile : PackedScene
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -34,3 +36,15 @@ func _physics_process(delta: float) -> void:
 			anim_sprite.play("idle")
 
 	move_and_slide()
+
+func trow_portal(num):
+	if num == 1:
+		pass
+	if num == 2:
+		pass
+	if num == 3:
+		pass
+
+func shoot():
+	var instance = projectile.instantiate()
+	get_parent().add_child(instance)
