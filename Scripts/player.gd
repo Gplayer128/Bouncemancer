@@ -6,7 +6,6 @@ extends CharacterBody2D
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 
-@export var projectile : PackedScene
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -36,19 +35,3 @@ func _physics_process(delta: float) -> void:
 			anim_sprite.play("idle")
 
 	move_and_slide()
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("1"):
-		shoot(1)
-	if event.is_action_pressed("2"):
-		shoot(2)
-	if event.is_action_pressed("3"):
-		shoot(3)
-
-func shoot(num):
-	var instance = projectile.instantiate()
-	var bullet_direction = player.global_position - get_global_mouse_position()
-	instance.position = Vector2.(10.0, 0)
-	add_child(instance)
-	#Global.bullet_dir = bullet_direction * SPEED
-	#Global.trampoline_shot_type = num
