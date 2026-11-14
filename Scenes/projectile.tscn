@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://63dwa06es12d"]
+
+[ext_resource type="Texture2D" uid="uid://b6jabb32vg3as" path="res://Assets/Portalball/Flying/portalball2.png" id="1_tl4hk"]
+[ext_resource type="Texture2D" uid="uid://dwxgjc0qt57s2" path="res://Assets/Portalball/Flying/portalball3.png" id="2_d4467"]
+[ext_resource type="Texture2D" uid="uid://mcdhgt86y2i3" path="res://Assets/Portalball/Flying/portalball.png" id="3_e1077"]
+[ext_resource type="Texture2D" uid="uid://d26lewrk1wory" path="res://Assets/Portalball/Hit/portalball_hit1.png" id="4_0iiay"]
+[ext_resource type="Texture2D" uid="uid://kxc46lljcu34" path="res://Assets/Portalball/Hit/portalball_hit2.png" id="5_d6p7i"]
+[ext_resource type="Texture2D" uid="uid://dgk4gfu2sujkp" path="res://Assets/Portalball/Hit/portalball_hit3.png" id="6_ovs0d"]
+[ext_resource type="Texture2D" uid="uid://d0xxhkht8jxbt" path="res://Assets/Portalball/Hit/portalball_hit4.png" id="7_ay8ps"]
+[ext_resource type="Texture2D" uid="uid://ddc8bxgbpd6t1" path="res://Assets/Portalball/Hit/portalball_hit5.png" id="8_akv1x"]
+[ext_resource type="Texture2D" uid="uid://cguyiokhvbm2s" path="res://Assets/Portalball/Hit/portalball_hit6.png" id="9_4bhuu"]
+[ext_resource type="Texture2D" uid="uid://b7822l51ryh1o" path="res://Assets/Portalball/Hit/portalball_hit7.png" id="10_h15bx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxovr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tl4hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d4467")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e1077")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 22.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0iiay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d6p7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ovs0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ay8ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_akv1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4bhuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h15bx")
+}],
+"loop": 0,
+"name": &"hit",
+"speed": 50.0
+}]
+
+[node name="projectile" type="AnimatedSprite2D" unique_id=103181846]
+sprite_frames = SubResource("SpriteFrames_sxovr")
+animation = &"hit"
+autoplay = "fly"
+frame = 6
+frame_progress = 1.0
