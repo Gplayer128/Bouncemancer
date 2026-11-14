@@ -1,21 +1,25 @@
 [gd_scene format=3 uid="uid://dp7cob6ot8pt3"]
 
-[ext_resource type="Script" uid="uid://4f5gkwxi1gkl" path="res://crate.gd" id="1_mo0jf"]
-[ext_resource type="Texture2D" uid="uid://bl6aehxka15qd" path="res://assets/crate.svg" id="1_uep05"]
+[ext_resource type="Script" uid="uid://dc5rjsicbtupl" path="res://crate.gd" id="1_cilbb"]
+[ext_resource type="Texture2D" uid="uid://cocpx4kor44dh" path="res://Assets/Trampoline/trampoline_green.png" id="2_iocah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo0jf"]
-size = Vector2(16, 16)
+size = Vector2(4.0710053, 1.3727813)
 
 [node name="Crate" type="RigidBody2D" unique_id=429924968]
 scale = Vector2(6.5, 6.5)
 mass = 1000.0
-script = ExtResource("1_mo0jf")
+script = ExtResource("1_cilbb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1837247719]
 texture_filter = 1
 scale = Vector2(6.5, 6.5)
-texture = ExtResource("1_uep05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1280020840]
-scale = Vector2(6.5, 6.5)
+position = Vector2(-0.92307705, -0.61538696)
+scale = Vector2(6.5000014, 6.5000014)
 shape = SubResource("RectangleShape2D_mo0jf")
+
+[node name="TrampolineGreen" type="Sprite2D" parent="." unique_id=1805327559]
+position = Vector2(-3.846154, -1.2307693)
+texture = ExtResource("2_iocah")

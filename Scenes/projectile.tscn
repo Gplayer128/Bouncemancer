@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://cestx6f7snxsw"]
+
+[ext_resource type="Texture2D" uid="uid://b6jabb32vg3as" path="res://Assets/Portalball/Flying/portalball2.png" id="1_tl4hk"]
+[ext_resource type="Texture2D" uid="uid://dwxgjc0qt57s2" path="res://Assets/Portalball/Flying/portalball3.png" id="2_d4467"]
+[ext_resource type="Texture2D" uid="uid://mcdhgt86y2i3" path="res://Assets/Portalball/Flying/portalball.png" id="3_e1077"]
+[ext_resource type="Texture2D" uid="uid://d26lewrk1wory" path="res://Assets/Portalball/Hit/portalball_hit1.png" id="4_0iiay"]
+[ext_resource type="Texture2D" uid="uid://kxc46lljcu34" path="res://Assets/Portalball/Hit/portalball_hit2.png" id="5_d6p7i"]
+[ext_resource type="Texture2D" uid="uid://dgk4gfu2sujkp" path="res://Assets/Portalball/Hit/portalball_hit3.png" id="6_ovs0d"]
+[ext_resource type="Texture2D" uid="uid://d0xxhkht8jxbt" path="res://Assets/Portalball/Hit/portalball_hit4.png" id="7_ay8ps"]
+[ext_resource type="Texture2D" uid="uid://ddc8bxgbpd6t1" path="res://Assets/Portalball/Hit/portalball_hit5.png" id="8_akv1x"]
+[ext_resource type="Texture2D" uid="uid://cguyiokhvbm2s" path="res://Assets/Portalball/Hit/portalball_hit6.png" id="9_4bhuu"]
+[ext_resource type="Texture2D" uid="uid://b7822l51ryh1o" path="res://Assets/Portalball/Hit/portalball_hit7.png" id="10_h15bx"]
+[ext_resource type="Script" uid="uid://jhl27qhgyt0e" path="res://Scripts/projectile.gd" id="11_d6p7i"]
+[ext_resource type="Texture2D" uid="uid://nitrf5ts3kni" path="res://Assets/Portalball/Transform/portalball_trn1.png" id="12_jdrjw"]
+[ext_resource type="Texture2D" uid="uid://cnrk5owyghgu" path="res://Assets/Portalball/Transform/portalball_trn2.png" id="13_oxmit"]
+[ext_resource type="Texture2D" uid="uid://bud1ueuai4vrm" path="res://Assets/Portalball/Transform/portalball_trn3.png" id="14_b66ev"]
+[ext_resource type="Texture2D" uid="uid://b5dv3crclwnrn" path="res://Assets/Portalball/Transform/portalball_trn4.png" id="15_f4pur"]
+[ext_resource type="Texture2D" uid="uid://cbev7syaoj8r" path="res://Assets/Portalball/Transform/portalball_trn5.png" id="16_ex1cl"]
+[ext_resource type="Texture2D" uid="uid://bqq5wvrahl4j2" path="res://Assets/Portalball/Transform/portalball_trn6.png" id="17_jpo8b"]
+[ext_resource type="Texture2D" uid="uid://cbmdqcw77vg2x" path="res://Assets/Portalball/Transform/portalball_trn7.png" id="18_gn4o2"]
+[ext_resource type="Texture2D" uid="uid://j25wdvrk41wj" path="res://Assets/Portalball/Transform/portalball_trn8.png" id="19_frn26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr3kr"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxovr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tl4hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d4467")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e1077")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0iiay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d6p7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ovs0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ay8ps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_akv1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4bhuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h15bx")
+}],
+"loop": 0,
+"name": &"hit",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jdrjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oxmit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b66ev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_f4pur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ex1cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jpo8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gn4o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_frn26")
+}],
+"loop": 1,
+"name": &"trn",
+"speed": 5.0
+}]
+
+[node name="projectile" type="CharacterBody2D" unique_id=1268151020]
+script = ExtResource("11_d6p7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671284343]
+shape = SubResource("RectangleShape2D_tr3kr")
+
+[node name="vision" type="RayCast2D" parent="." unique_id=335690007]
+target_position = Vector2(11, 0)
+
+[node name="vision2" type="RayCast2D" parent="." unique_id=807881522]
+target_position = Vector2(0, 14)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=274611914]
+sprite_frames = SubResource("SpriteFrames_sxovr")
+animation = &"trn"
+frame_progress = 0.6708936
