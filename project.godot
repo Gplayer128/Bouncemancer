@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 Global="*uid://bsklp3jypg0k2"
+BulletManager="*uid://dxffryphd5vtm"
 
 [display]
 

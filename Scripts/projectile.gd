@@ -1,22 +1,20 @@
 extends CharacterBody2D
 
-@onready var vision: RayCast2D = $vision
-@onready var vision_2: RayCast2D = $vision2
+@export var SPEED = 100
 
-@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+var dir : float
+var spawnPos : Vector2
+var spawnRot : float
 
-var type = 0
+func _ready() :
+	global_position = spawnPos
+	global_rotation = spawnRot
 
-func _ready() -> void:
-	type = Global.trampoline_shot_type
+func setup(p_dir: float, p_pos: Vector2, p_rot: float):
+	dir = p_dir
+	spawnPos = p_pos
+	spawnRot = p_rot
 
-
-func _process(delta: float) -> void:
-	if vision.is_colliding():
-		velocity = Vector2.ZERO
-		anim_sprite.play("hit")
-	else:
-		anim_sprite.play("fly")
-
-	if vision_2.is_colliding():
-		pass
+func _physics_process(delta):
+	velocity = Vector2(0, 0).rotated(dir)
+	move_and_slide()
