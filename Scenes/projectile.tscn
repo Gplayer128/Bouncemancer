@@ -34,7 +34,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"fly",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -57,12 +57,7 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_h15bx")
-}],
-"loop": 1,
-"name": &"hit",
-"speed": 5.0
 }, {
-"frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_jdrjw")
 }, {
@@ -87,9 +82,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_frn26")
 }],
-"loop": 1,
-"name": &"trans",
-"speed": 5.0
+"loop": 0,
+"name": &"hit",
+"speed": 25.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wt1i"]
@@ -101,7 +96,11 @@ script = ExtResource("11_d6p7i")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1093829602]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_sxovr")
-animation = &"trans"
+animation = &"hit"
+autoplay = "fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50945272]
 shape = SubResource("CircleShape2D_8wt1i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
