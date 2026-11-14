@@ -51,12 +51,6 @@ sources/1 = SubResource("TileSetAtlasSource_ng020")
 
 [node name="Node" type="Node" parent="." unique_id=1489354867]
 
-[node name="Door" type="Sprite2D" parent="Node" unique_id=2122868619]
-z_index = 10
-position = Vector2(48, 407.00003)
-scale = Vector2(6, 9)
-texture = ExtResource("3_didp7")
-
 [node name="Door2" type="Sprite2D" parent="Node" unique_id=793656304]
 z_index = 10
 position = Vector2(1872, 599.00006)
