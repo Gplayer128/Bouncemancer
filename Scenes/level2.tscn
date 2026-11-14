@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://62mx1tik0nlr"]
 
 [ext_resource type="Texture2D" uid="uid://bnwj8oeif0gl" path="res://Assets/brick_wall.png" id="1_1k4by"]
+[ext_resource type="Script" uid="uid://hblfsjtkfign" path="res://Scripts/level_2.gd" id="1_mhlpv"]
 [ext_resource type="Texture2D" uid="uid://c7550o7buqgpy" path="res://Assets/door.png" id="1_onqnr"]
 [ext_resource type="Texture2D" uid="uid://crf8dt0sdv0jh" path="res://Assets/background.png" id="2_dlanv"]
 [ext_resource type="Texture2D" uid="uid://cs8jsqkevcvtg" path="res://Assets/cracked_brick.png" id="2_styii"]
@@ -47,8 +48,9 @@ margins = Vector2i(2, 2)
 sources/0 = SubResource("TileSetAtlasSource_8gbba")
 sources/1 = SubResource("TileSetAtlasSource_ng020")
 
-[node name="level1" type="Node2D" unique_id=490043751]
+[node name="level2" type="Node2D" unique_id=490043751]
 position = Vector2(0, -263)
+script = ExtResource("1_mhlpv")
 
 [node name="Node" type="Node" parent="." unique_id=1489354867]
 
