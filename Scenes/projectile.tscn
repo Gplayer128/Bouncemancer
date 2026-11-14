@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ddc8bxgbpd6t1" path="res://Assets/Portalball/Hit/portalball_hit5.png" id="8_akv1x"]
 [ext_resource type="Texture2D" uid="uid://cguyiokhvbm2s" path="res://Assets/Portalball/Hit/portalball_hit6.png" id="9_4bhuu"]
 [ext_resource type="Texture2D" uid="uid://b7822l51ryh1o" path="res://Assets/Portalball/Hit/portalball_hit7.png" id="10_h15bx"]
+[ext_resource type="Script" uid="uid://jhl27qhgyt0e" path="res://Scripts/projectile.gd" id="11_d6p7i"]
 [ext_resource type="Texture2D" uid="uid://nitrf5ts3kni" path="res://Assets/Portalball/Transform/portalball_trn1.png" id="12_jdrjw"]
 [ext_resource type="Texture2D" uid="uid://cnrk5owyghgu" path="res://Assets/Portalball/Transform/portalball_trn2.png" id="13_oxmit"]
 [ext_resource type="Texture2D" uid="uid://bud1ueuai4vrm" path="res://Assets/Portalball/Transform/portalball_trn3.png" id="14_b66ev"]
@@ -91,10 +92,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8wt1i"]
+
 [node name="projectile" type="CharacterBody2D" unique_id=1040299986]
+script = ExtResource("11_d6p7i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1093829602]
 sprite_frames = SubResource("SpriteFrames_sxovr")
 animation = &"trans"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50945272]
+shape = SubResource("CircleShape2D_8wt1i")
