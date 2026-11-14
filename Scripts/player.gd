@@ -3,29 +3,21 @@ extends CharacterBody2D
 @onready var anim_sprite: AnimatedSprite2D = $anim_sprite
 @onready var player: Marker2D = $player
 
-var bullet_manager_var
-
-var dir_start
+var speed_multiplier: float = 1.0
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 
-func _ready() -> void:
-	bullet_manager_var = get_parent().get_child(0)
-	#bullet_manager_var.shoot()
-
 func _process(delta: float) -> void:
-	dir_start = player.position
 	if Input.is_action_just_pressed("Restart"):
 		get_tree().reload_current_scene()
-	Global.player_pos = position
-	Global.bullet_dir = dir_start - get_global_mouse_position()
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -35,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED * speed_multiplier
 		if !is_on_floor():
 			anim_sprite.play("jump")
 		else:
@@ -49,9 +41,12 @@ func _physics_process(delta: float) -> void:
 			anim_sprite.play("idle")
 
 	move_and_slide()
+<<<<<<< HEAD
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("1"):
 		Global.player_pos = position + Vector2(0.0, 5.0)
 		Global.bullet_dir = dir_start - get_global_mouse_position()
 		bullet_manager_var.shoot()
+=======
+>>>>>>> 7c28887e2f83a035781de294f2276563c4b73fb8
