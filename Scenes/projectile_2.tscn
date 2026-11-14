@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://cj6ex5mbowvwx"]
+
+[ext_resource type="Script" uid="uid://bwr0m41ry2uu8" path="res://Scripts/projectile_2.gd" id="1_ca0ow"]
+[ext_resource type="Texture2D" uid="uid://b6jabb32vg3as" path="res://Assets/Portalball/Flying/portalball2.png" id="2_3ichg"]
+[ext_resource type="Texture2D" uid="uid://dwxgjc0qt57s2" path="res://Assets/Portalball/Flying/portalball3.png" id="3_bdb5v"]
+[ext_resource type="Texture2D" uid="uid://mcdhgt86y2i3" path="res://Assets/Portalball/Flying/portalball.png" id="4_ako68"]
+[ext_resource type="Texture2D" uid="uid://d26lewrk1wory" path="res://Assets/Portalball/Hit/portalball_hit1.png" id="5_tm4st"]
+[ext_resource type="Texture2D" uid="uid://kxc46lljcu34" path="res://Assets/Portalball/Hit/portalball_hit2.png" id="6_4sx18"]
+[ext_resource type="Texture2D" uid="uid://dgk4gfu2sujkp" path="res://Assets/Portalball/Hit/portalball_hit3.png" id="7_e25hg"]
+[ext_resource type="Texture2D" uid="uid://d0xxhkht8jxbt" path="res://Assets/Portalball/Hit/portalball_hit4.png" id="8_55iej"]
+[ext_resource type="Texture2D" uid="uid://ddc8bxgbpd6t1" path="res://Assets/Portalball/Hit/portalball_hit5.png" id="9_e5ad5"]
+[ext_resource type="Texture2D" uid="uid://cguyiokhvbm2s" path="res://Assets/Portalball/Hit/portalball_hit6.png" id="10_37h01"]
+[ext_resource type="Texture2D" uid="uid://b7822l51ryh1o" path="res://Assets/Portalball/Hit/portalball_hit7.png" id="11_75kir"]
+[ext_resource type="Texture2D" uid="uid://nitrf5ts3kni" path="res://Assets/Portalball/Transform/portalball_trn1.png" id="12_q8htv"]
+[ext_resource type="Texture2D" uid="uid://cnrk5owyghgu" path="res://Assets/Portalball/Transform/portalball_trn2.png" id="13_i6otc"]
+[ext_resource type="Texture2D" uid="uid://bud1ueuai4vrm" path="res://Assets/Portalball/Transform/portalball_trn3.png" id="14_05ar5"]
+[ext_resource type="Texture2D" uid="uid://b5dv3crclwnrn" path="res://Assets/Portalball/Transform/portalball_trn4.png" id="15_va4m6"]
+[ext_resource type="Texture2D" uid="uid://cbev7syaoj8r" path="res://Assets/Portalball/Transform/portalball_trn5.png" id="16_3v4xs"]
+[ext_resource type="Texture2D" uid="uid://bqq5wvrahl4j2" path="res://Assets/Portalball/Transform/portalball_trn6.png" id="17_4aain"]
+[ext_resource type="Texture2D" uid="uid://cbmdqcw77vg2x" path="res://Assets/Portalball/Transform/portalball_trn7.png" id="18_s6723"]
+[ext_resource type="Texture2D" uid="uid://j25wdvrk41wj" path="res://Assets/Portalball/Transform/portalball_trn8.png" id="19_mlwm4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxovr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3ichg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bdb5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ako68")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tm4st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4sx18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e25hg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_55iej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e5ad5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_37h01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_75kir")
+}],
+"loop": 0,
+"name": &"hit",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_q8htv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i6otc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_05ar5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_va4m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3v4xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4aain")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_s6723")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mlwm4")
+}],
+"loop": 0,
+"name": &"hit2",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8wt1i"]
+radius = 38.052597
+
+[node name="projectile2" type="Area2D" unique_id=1109421707]
+script = ExtResource("1_ca0ow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1093829602]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_sxovr")
+animation = &"hit2"
+autoplay = "fly"
+frame = 7
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50945272]
+shape = SubResource("CircleShape2D_8wt1i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
