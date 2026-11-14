@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var bounce_force: float = 1500.0
+@export var bounce_force: float = 750.0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:

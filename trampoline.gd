@@ -2,8 +2,8 @@ extends RigidBody2D
 
 @onready var timer: Timer = $Timer
 
-@export var bounce_force: float = 500.0
-@export var horizontal_multiplier: float = 1.1
+@export var bounce_force: float = 650
+@export var horizontal_multiplier: float = 1.25
 
 var can_bounce = true
 
