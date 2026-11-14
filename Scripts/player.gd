@@ -41,12 +41,10 @@ func _physics_process(delta: float) -> void:
 			anim_sprite.play("idle")
 
 	move_and_slide()
-<<<<<<< HEAD
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("1"):
 		Global.player_pos = position + Vector2(0.0, 5.0)
 		Global.bullet_dir = dir_start - get_global_mouse_position()
 		bullet_manager_var.shoot()
-=======
->>>>>>> 7c28887e2f83a035781de294f2276563c4b73fb8
