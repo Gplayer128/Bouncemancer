@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://bqq5wvrahl4j2" path="res://Assets/Portalball/Transform/portalball_trn6.png" id="17_jpo8b"]
 [ext_resource type="Texture2D" uid="uid://cbmdqcw77vg2x" path="res://Assets/Portalball/Transform/portalball_trn7.png" id="18_gn4o2"]
 [ext_resource type="Texture2D" uid="uid://j25wdvrk41wj" path="res://Assets/Portalball/Transform/portalball_trn8.png" id="19_frn26"]
-[ext_resource type="PackedScene" uid="uid://d0pe6m1p3epgf" path="res://Scenes/player.tscn" id="20_oxmit"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sxovr"]
 animations = [{
@@ -96,7 +95,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wt1i"]
 radius = 38.052597
 
-[node name="projectile" type="CharacterBody2D" unique_id=1040299986]
+[node name="projectile" type="Area2D" unique_id=1109421707]
 script = ExtResource("11_d6p7i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1093829602]
@@ -106,6 +105,3 @@ animation = &"trans"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50945272]
 shape = SubResource("CircleShape2D_8wt1i")
-
-[node name="player" parent="." unique_id=1689147481 instance=ExtResource("20_oxmit")]
-position = Vector2(109, -1)
