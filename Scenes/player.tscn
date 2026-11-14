@@ -69,3 +69,11 @@ sprite_frames = SubResource("SpriteFrames_f60y1")
 animation = &"fall"
 
 [node name="player" type="Marker2D" parent="." unique_id=10134297]
+
+[node name="TouchBox" type="Area2D" parent="." unique_id=334956179]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TouchBox" unique_id=290618017]
+position = Vector2(0, -0.25)
+shape = SubResource("CapsuleShape2D_vgqql")
+
+[connection signal="body_entered" from="TouchBox" to="." method="_on_touch_box_body_entered"]

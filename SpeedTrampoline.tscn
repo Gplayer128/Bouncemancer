@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dp7cob6ot8pt3"]
+
+[ext_resource type="Script" uid="uid://bx7druxvjniy1" path="res://trampoline.gd" id="1_cilbb"]
+[ext_resource type="Texture2D" uid="uid://cocpx4kor44dh" path="res://Assets/Trampoline/trampoline_green.png" id="2_iocah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo0jf"]
+size = Vector2(29.857979, 8.005916)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eknwm"]
+size = Vector2(194, 15)
+
+[node name="SpeedTrampoline" type="RigidBody2D" unique_id=429924968]
+mass = 1000.0
+script = ExtResource("1_cilbb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1280020840]
+position = Vector2(18.96154, 10.019234)
+scale = Vector2(6.5000014, 6.5000014)
+shape = SubResource("RectangleShape2D_mo0jf")
+
+[node name="TrampolineGreen" type="Sprite2D" parent="." unique_id=1805327559]
+z_index = 3
+position = Vector2(-3.846154, -1.2307693)
+scale = Vector2(7.5, 7.5)
+texture = ExtResource("2_iocah")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=954542048]
+priority = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1456229045]
+position = Vector2(19, -24.5)
+shape = SubResource("RectangleShape2D_eknwm")
+
+[node name="Timer" type="Timer" parent="." unique_id=1447206108]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

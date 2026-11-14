@@ -1,12 +1,19 @@
 extends RigidBody2D
 
-@export var gravity_strength := 600.0
+@onready var timer: Timer = $Timer
 
+@export var bounce_force: float = 500.0
+@export var horizontal_multiplier: float = 1.1
 
-var bounce_force = 33
+var can_bounce = true
 
+func _on_timer_timeout() -> void:
+	can_bounce = true
 
-func _on_body_entered(body):
-	var bounce_velocity = Vector3(0, bounce_force, 0)
-	body.velocity = body.velocity + bounce_velocity 
-	
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D and can_bounce:
+		can_bounce = false
+		timer.start()
+
+		body.velocity.y = -bounce_force
+		body.speed_multiplier = horizontal_multiplier
