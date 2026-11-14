@@ -1,0 +1,207 @@
+[gd_scene format=4 uid="uid://8h487btuagen"]
+
+[ext_resource type="Script" uid="uid://cwdp786xays0k" path="res://Scenes/main_menu.gd" id="1_8um5k"]
+[ext_resource type="FontFile" uid="uid://dfxpq7tb1n75" path="res://Assets/monofonto/monofonto rg.otf" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://crf8dt0sdv0jh" path="res://Assets/background.png" id="2_8saeu"]
+[ext_resource type="Texture2D" uid="uid://c7550o7buqgpy" path="res://Assets/door.png" id="2_ghw46"]
+[ext_resource type="Texture2D" uid="uid://crgcyu66v1qku" path="res://Assets/crate.png" id="3_df05h"]
+[ext_resource type="Texture2D" uid="uid://bnwj8oeif0gl" path="res://Assets/brick_wall.png" id="3_ghw46"]
+
+[sub_resource type="Theme" id="Theme_tt5f1"]
+default_font = ExtResource("1_tt5f1")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tt5f1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_853f1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8saeu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_loo7a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if7li"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ghw46"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_df05h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8um5k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xim88"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_koqhg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cmrfp"]
+
+[sub_resource type="Theme" id="Theme_eknwm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xim88"]
+texture = ExtResource("2_ghw46")
+margins = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_koqhg"]
+texture = ExtResource("3_df05h")
+margins = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_df05h"]
+texture = ExtResource("2_8saeu")
+margins = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8um5k"]
+texture = ExtResource("3_ghw46")
+margins = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_xim88"]
+physics_layer_0/collision_layer = 1
+sources/4 = SubResource("TileSetAtlasSource_df05h")
+sources/5 = SubResource("TileSetAtlasSource_8um5k")
+sources/0 = SubResource("TileSetAtlasSource_xim88")
+sources/1 = SubResource("TileSetAtlasSource_koqhg")
+
+[node name="MainMenu" type="Control" unique_id=1450076701]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8um5k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=344564339]
+layout_mode = 0
+offset_left = 1370.0
+offset_top = 390.0
+offset_right = 1754.0
+offset_bottom = 690.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1744775411]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = SubResource("Theme_tt5f1")
+theme_override_colors/font_color = Color(0.99999994, 0.6425431, 0.24810424, 1)
+theme_override_colors/font_focus_color = Color(0.99999994, 0.6425431, 0.24810424, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.6431373, 0.24705882, 1)
+theme_override_colors/font_hover_color = Color(1, 0.6431373, 0.24705882, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.6431373, 0.24705882, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.6431373, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(0.6271761, 0.36790693, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+theme_override_constants/outline_size = 25
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tt5f1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_853f1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8saeu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_loo7a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_if7li")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ghw46")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_df05h")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8um5k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xim88")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_koqhg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cmrfp")
+text = "Start Game"
+alignment = 0
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1531362812]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = SubResource("Theme_tt5f1")
+theme_override_colors/font_color = Color(0.99999994, 0.6425431, 0.24810424, 1)
+theme_override_colors/font_focus_color = Color(0.99999994, 0.6425431, 0.24810424, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.6431373, 0.24705882, 1)
+theme_override_colors/font_hover_color = Color(1, 0.6431373, 0.24705882, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.6431373, 0.24705882, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.6431373, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(0.6271761, 0.36790693, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+theme_override_constants/outline_size = 25
+theme_override_constants/h_separation = 100
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tt5f1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_853f1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8saeu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_loo7a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_if7li")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ghw46")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_df05h")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8um5k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xim88")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_koqhg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cmrfp")
+text = "Quit"
+alignment = 0
+
+[node name="Label" type="Label" parent="." unique_id=477609693]
+layout_mode = 0
+offset_left = 873.0
+offset_top = 111.0
+offset_right = 1773.0
+offset_bottom = 231.0
+theme = SubResource("Theme_eknwm")
+theme_override_colors/font_color = Color(0.99999994, 0.6425431, 0.24810424, 1)
+theme_override_colors/font_outline_color = Color(0.6271761, 0.36790693, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 100
+text = "[INSERT NAME HERE]"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1383378122]
+z_index = -2
+position = Vector2(0, -196.99998)
+scale = Vector2(20, 20)
+tile_map_data = PackedByteArray("AAAAAAMABAAAAAAAAAAAAAIABAAAAAAAAAAAAAEABAAAAAAAAAAAAAAABAAAAAAAAAABAAAABAAAAAAAAAABAAEABAAAAAAAAAACAAMABAAAAAAAAAACAAIABAAAAAAAAAACAAEABAAAAAAAAAACAAAABAAAAAAAAAADAAAABAAAAAAAAAADAAEABAAAAAAAAAADAAIABAAAAAAAAAADAAMABAAAAAAAAAAEAAMABAAAAAAAAAAEAAIABAAAAAAAAAAEAAEABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAAFAAEABAAAAAAAAAAFAAIABAAAAAAAAAAFAAMABAAAAAAAAAABAAMABAAAAAAAAAABAAIABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_xim88")
+
+[node name="Crate" type="Sprite2D" parent="." unique_id=1318168156]
+position = Vector2(214, 958.0001)
+scale = Vector2(15, 15)
+texture = ExtResource("3_df05h")
+
+[node name="Crate2" type="Sprite2D" parent="." unique_id=1100577702]
+position = Vector2(485, 958)
+scale = Vector2(15, 15)
+texture = ExtResource("3_df05h")
+
+[node name="Crate3" type="Sprite2D" parent="." unique_id=2016629787]
+position = Vector2(373, 719)
+scale = Vector2(15, 15)
+texture = ExtResource("3_df05h")
+
+[node name="Door" type="Sprite2D" parent="." unique_id=2058511809]
+position = Vector2(1138, 782)
+scale = Vector2(20, 20)
+texture = ExtResource("2_ghw46")
+
+[node name="Door2" type="Sprite2D" parent="." unique_id=1398296398]
+position = Vector2(1138, 1102.0001)
+rotation = -3.1415927
+scale = Vector2(20, 20)
+texture = ExtResource("2_ghw46")
+flip_h = true
+flip_v = true
+
+[node name="Door3" type="Sprite2D" parent="." unique_id=875513777]
+position = Vector2(1138, 1123.0001)
+rotation = -3.1415927
+scale = Vector2(20, 20)
+texture = ExtResource("2_ghw46")
+flip_h = true
+flip_v = true
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
