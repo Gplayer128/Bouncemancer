@@ -4,10 +4,9 @@ extends CharacterBody2D
 @onready var player: Marker2D = $player
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -400.0
 
 @export var projectile : PackedScene
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -38,16 +37,17 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func trow_portal(num):
-	if num == 1:
-		pass
-	if num == 2:
-		pass
-	if num == 3:
-		pass
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("1"):
+		shoot(1)
+	if event.is_action_pressed("2"):
+		shoot(2)
+	if event.is_action_pressed("3"):
+		shoot(3)
 
-func shoot():
+func shoot(num):
 	var instance = projectile.instantiate()
 	var direction = player.global_position - get_global_mouse_position()
-	instance.velocity.x = direction * SPEED
 	get_parent().add_child(instance)
+	Global.bullet_dir = direction * SPEED
+	Global.trampoline_shot_type = num
