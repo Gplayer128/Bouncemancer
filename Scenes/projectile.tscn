@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://ddc8bxgbpd6t1" path="res://Assets/Portalball/Hit/portalball_hit5.png" id="8_akv1x"]
 [ext_resource type="Texture2D" uid="uid://cguyiokhvbm2s" path="res://Assets/Portalball/Hit/portalball_hit6.png" id="9_4bhuu"]
 [ext_resource type="Texture2D" uid="uid://b7822l51ryh1o" path="res://Assets/Portalball/Hit/portalball_hit7.png" id="10_h15bx"]
+[ext_resource type="Script" uid="uid://jhl27qhgyt0e" path="res://Scripts/projectile.gd" id="11_d6p7i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr3kr"]
+size = Vector2(16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sxovr"]
 animations = [{
@@ -54,9 +58,18 @@ animations = [{
 "speed": 50.0
 }]
 
-[node name="projectile" type="AnimatedSprite2D" unique_id=103181846]
+[node name="projectile" type="CharacterBody2D" unique_id=1268151020]
+script = ExtResource("11_d6p7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671284343]
+shape = SubResource("RectangleShape2D_tr3kr")
+
+[node name="vision" type="RayCast2D" parent="." unique_id=335690007]
+target_position = Vector2(11, 0)
+
+[node name="vision2" type="RayCast2D" parent="." unique_id=807881522]
+target_position = Vector2(0, 14)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=274611914]
 sprite_frames = SubResource("SpriteFrames_sxovr")
-animation = &"hit"
-autoplay = "fly"
-frame = 6
-frame_progress = 1.0
+animation = &"fly"

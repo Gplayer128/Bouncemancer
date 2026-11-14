@@ -15,6 +15,10 @@ run/main_scene="uid://bffqc7wy4qms0"
 config/features=PackedStringArray("4.7")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+Global="*uid://bsklp3jypg0k2"
+
 [display]
 
 window/size/viewport_width=1920
@@ -70,3 +74,4 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
