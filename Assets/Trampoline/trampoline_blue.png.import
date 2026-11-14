@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mcdhgt86y2i3"
-path="res://.godot/imported/portalball.png-cf9f01b21bcdec027ee5b760b021e530.ctex"
+uid="uid://csdq8du0v40dy"
+path="res://.godot/imported/trampoline_blue.png-9b273242364d5e2f1d160f8f38024f88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portalball/portalball.png"
-dest_files=["res://.godot/imported/portalball.png-cf9f01b21bcdec027ee5b760b021e530.ctex"]
+source_file="res://Assets/Trampoline/trampoline_blue.png"
+dest_files=["res://.godot/imported/trampoline_blue.png-9b273242364d5e2f1d160f8f38024f88.ctex"]
 
 [params]
 

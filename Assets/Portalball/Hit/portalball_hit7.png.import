@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwxgjc0qt57s2"
-path="res://.godot/imported/portalball3.png-550ac105c2abd64f1ae81cd3c425ae3f.ctex"
+uid="uid://b7822l51ryh1o"
+path="res://.godot/imported/portalball_hit7.png-f7cccd4ca255fc54f9ce8154401f5875.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Portalball/portalball3.png"
-dest_files=["res://.godot/imported/portalball3.png-550ac105c2abd64f1ae81cd3c425ae3f.ctex"]
+source_file="res://Assets/Portalball/Hit/portalball_hit7.png"
+dest_files=["res://.godot/imported/portalball_hit7.png-f7cccd4ca255fc54f9ce8154401f5875.ctex"]
 
 [params]
 
