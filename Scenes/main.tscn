@@ -29,3 +29,4 @@ tile_map_data = PackedByteArray("AAAAAA0ABQAAAAAAAAABAA0ABQAAAAAAAAACAA0ABQAAAAA
 tile_set = SubResource("TileSet_sxovr")
 
 [node name="player" parent="." unique_id=1501933892 instance=ExtResource("3_kry3j")]
+position = Vector2(146, 153)

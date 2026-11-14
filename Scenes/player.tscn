@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cnowgmc5j8eg2" path="res://Assets/char_move_2.png" id="4_3smsa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgqql"]
-radius = 24.0
-height = 68.5
+radius = 28.0
+height = 82.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f60y1"]
 animations = [{
@@ -49,6 +49,6 @@ position = Vector2(0, -0.25)
 shape = SubResource("CapsuleShape2D_vgqql")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=513699106]
-scale = Vector2(4, 4)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_f60y1")
 animation = &"idle"
