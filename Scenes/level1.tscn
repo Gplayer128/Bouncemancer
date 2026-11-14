@@ -5,7 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://c7550o7buqgpy" path="res://Assets/door.png" id="3_didp7"]
 [ext_resource type="PackedScene" uid="uid://d0pe6m1p3epgf" path="res://Scenes/player.tscn" id="3_y4dr7"]
 [ext_resource type="PackedScene" uid="uid://bh4inugiarp1c" path="res://level_exit.tscn" id="4_2a60c"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dp7cob6ot8pt3" path="res://SpeedTrampoline.tscn" id="6_didp7"]
+=======
+[ext_resource type="Script" uid="uid://dtohv6h0kk5cs" path="res://Scripts/node.gd" id="6_didp7"]
+>>>>>>> ed407619b5d302dd550eef93a2c165ac559d5e31
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bp64"]
 texture = ExtResource("1_c5erv")
@@ -28,6 +32,10 @@ sources/0 = SubResource("TileSetAtlasSource_8gbba")
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eknwm"]
 
 [node name="level1" type="Node2D" unique_id=490043751]
+
+[node name="bullet_manager" type="Node" parent="." unique_id=389253071]
+script = ExtResource("6_didp7")
+metadata/_custom_type_script = "uid://dtohv6h0kk5cs"
 
 [node name="Node" type="Node" parent="." unique_id=1489354867]
 
@@ -63,8 +71,11 @@ next_scene = "res://Scenes/level2.tscn"
 [node name="player" parent="." unique_id=1501933892 groups=["player"] instance=ExtResource("3_y4dr7")]
 z_index = 1000
 position = Vector2(135, 343)
+<<<<<<< HEAD
 
 [node name="SpeedTrampoline" parent="." unique_id=429924968 instance=ExtResource("6_didp7")]
 position = Vector2(975, 969)
 physics_material_override = SubResource("PhysicsMaterial_eknwm")
 horizontal_multiplier = 10.0
+=======
+>>>>>>> ed407619b5d302dd550eef93a2c165ac559d5e31
