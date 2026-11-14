@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var anim_sprite: AnimatedSprite2D = $anim_sprite
+@onready var player: Marker2D = $player
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -600.0
@@ -47,4 +48,6 @@ func trow_portal(num):
 
 func shoot():
 	var instance = projectile.instantiate()
+	var direction = player.global_position - get_global_mouse_position()
+	instance.velocity.x = direction * SPEED
 	get_parent().add_child(instance)
