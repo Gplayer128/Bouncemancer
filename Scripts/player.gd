@@ -3,14 +3,24 @@ extends CharacterBody2D
 @onready var anim_sprite: AnimatedSprite2D = $anim_sprite
 @onready var player: Marker2D = $player
 
+var bullet_manager_var
+var dir_start
+
 var speed_multiplier: float = 1.0
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 
+func _ready() -> void:
+	bullet_manager_var = get_parent().get_child(0)
+
 func _process(delta: float) -> void:
+	dir_start = player.position
+	
 	if Input.is_action_just_pressed("Restart"):
 		get_tree().reload_current_scene()
+	Global.player_pos = position
+	Global.bullet_dir = dir_start - get_global_mouse_position()
 
 func _physics_process(delta: float) -> void:
 	
