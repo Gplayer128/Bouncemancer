@@ -11,6 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://cguyiokhvbm2s" path="res://Assets/Portalball/Hit/portalball_hit6.png" id="9_4bhuu"]
 [ext_resource type="Texture2D" uid="uid://b7822l51ryh1o" path="res://Assets/Portalball/Hit/portalball_hit7.png" id="10_h15bx"]
 [ext_resource type="Script" uid="uid://jhl27qhgyt0e" path="res://Scripts/projectile.gd" id="11_d6p7i"]
+[ext_resource type="Texture2D" uid="uid://nitrf5ts3kni" path="res://Assets/Portalball/Transform/portalball_trn1.png" id="12_jdrjw"]
+[ext_resource type="Texture2D" uid="uid://cnrk5owyghgu" path="res://Assets/Portalball/Transform/portalball_trn2.png" id="13_oxmit"]
+[ext_resource type="Texture2D" uid="uid://bud1ueuai4vrm" path="res://Assets/Portalball/Transform/portalball_trn3.png" id="14_b66ev"]
+[ext_resource type="Texture2D" uid="uid://b5dv3crclwnrn" path="res://Assets/Portalball/Transform/portalball_trn4.png" id="15_f4pur"]
+[ext_resource type="Texture2D" uid="uid://cbev7syaoj8r" path="res://Assets/Portalball/Transform/portalball_trn5.png" id="16_ex1cl"]
+[ext_resource type="Texture2D" uid="uid://bqq5wvrahl4j2" path="res://Assets/Portalball/Transform/portalball_trn6.png" id="17_jpo8b"]
+[ext_resource type="Texture2D" uid="uid://cbmdqcw77vg2x" path="res://Assets/Portalball/Transform/portalball_trn7.png" id="18_gn4o2"]
+[ext_resource type="Texture2D" uid="uid://j25wdvrk41wj" path="res://Assets/Portalball/Transform/portalball_trn8.png" id="19_frn26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tr3kr"]
 size = Vector2(16, 16)
@@ -29,7 +37,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"fly",
-"speed": 22.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -55,7 +63,36 @@ animations = [{
 }],
 "loop": 0,
 "name": &"hit",
-"speed": 50.0
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jdrjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oxmit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b66ev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_f4pur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ex1cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jpo8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gn4o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_frn26")
+}],
+"loop": 1,
+"name": &"trn",
+"speed": 5.0
 }]
 
 [node name="projectile" type="CharacterBody2D" unique_id=1268151020]
@@ -72,4 +109,5 @@ target_position = Vector2(0, 14)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=274611914]
 sprite_frames = SubResource("SpriteFrames_sxovr")
-animation = &"fly"
+animation = &"trn"
+frame_progress = 0.014912342
