@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://bhs4xchw0kadu"]
 
 [ext_resource type="Texture2D" uid="uid://bnwj8oeif0gl" path="res://Assets/brick_wall.png" id="1_c5erv"]
-[ext_resource type="Script" uid="uid://cf4ppmat8gics" path="res://Scenes/level_1.gd" id="1_jgkgd"]
 [ext_resource type="Texture2D" uid="uid://cs8jsqkevcvtg" path="res://Assets/cracked_brick.png" id="2_didp7"]
 [ext_resource type="Texture2D" uid="uid://crf8dt0sdv0jh" path="res://Assets/background.png" id="2_lyd6k"]
 [ext_resource type="Texture2D" uid="uid://c7550o7buqgpy" path="res://Assets/door.png" id="3_didp7"]
@@ -52,7 +51,6 @@ sources/1 = SubResource("TileSetAtlasSource_ng020")
 [sub_resource type="Theme" id="Theme_bs12r"]
 
 [node name="level1" type="Node2D" unique_id=490043751]
-script = ExtResource("1_jgkgd")
 
 [node name="Node" type="Node" parent="." unique_id=1489354867]
 
