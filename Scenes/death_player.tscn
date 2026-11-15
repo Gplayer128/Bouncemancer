@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b6re4bn25lnla"]
+
+[ext_resource type="AudioStream" uid="uid://ca42ttgb0f5hr" path="res://Assets/Audio/Yoda_death_a_capela1.wav" id="1_igdx6"]
+
+[node name="death_player" type="AudioStreamPlayer2D" unique_id=1261053003]
+stream = ExtResource("1_igdx6")

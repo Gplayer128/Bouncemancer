@@ -4,6 +4,6 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		audio_stream_player_2d.play()
+		Global.death_play()
 		get_tree().reload_current_scene()
 	

@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cruujsucv6jil"]
+[gd_scene format=4 uid="uid://ctmt7jqimpjis"]
 
 [ext_resource type="Texture2D" uid="uid://c7550o7buqgpy" path="res://Assets/door.png" id="1_0vxl1"]
 [ext_resource type="PackedScene" uid="uid://d0pe6m1p3epgf" path="res://Scenes/player.tscn" id="2_ypqhe"]
@@ -106,7 +106,7 @@ tile_set = SubResource("TileSet_ect8u")
 z_index = 4096
 position = Vector2(1246, 618)
 rotation = -3.1415927
-next_scene = "res://Scenes/level5.tscn"
+next_scene = "res://Scenes/level7.tscn"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2072758631]
 script = ExtResource("8_gh5wq")

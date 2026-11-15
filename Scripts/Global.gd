@@ -5,3 +5,10 @@ var bullet_dir
 var has_m2 = true
 var trampoline_unlocked = 1
 var player_pos
+
+var death_scene = preload("res://Scenes/death_player.tscn")
+
+func death_play():
+	var instance = death_scene.instantiate()
+	add_child(instance)
+	instance.play()

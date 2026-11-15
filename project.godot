@@ -19,6 +19,7 @@ config/icon="res://Assets/icon.svg"
 
 Global="*uid://bsklp3jypg0k2"
 BulletManager="*uid://dxffryphd5vtm"
+NodeGlobal="*uid://cshpxfwstax7a"
 
 [display]
 
