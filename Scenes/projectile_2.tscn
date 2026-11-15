@@ -90,7 +90,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"hit2",
-"speed": 10.0
+"speed": 20.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wt1i"]
@@ -104,8 +104,6 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_sxovr")
 animation = &"hit2"
 autoplay = "fly"
-frame = 7
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50945272]
 shape = SubResource("CircleShape2D_8wt1i")
