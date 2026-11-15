@@ -92,7 +92,7 @@ tile_set = SubResource("TileSet_ect8u")
 z_index = 4096
 position = Vector2(1819.9998, 505.49976)
 rotation = 0.0
-next_scene = "res://Scenes/level10.tscn"
+next_scene = "res://Scenes/level_10.tscn"
 
 [node name="RectangleOfDoomAndDespair" parent="." unique_id=1582482459 instance=ExtResource("7_aaqiy")]
 z_index = 10

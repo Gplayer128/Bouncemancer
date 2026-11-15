@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bnwj8oeif0gl" path="res://Assets/brick_wall.png" id="5_0rukg"]
 [ext_resource type="Texture2D" uid="uid://crf8dt0sdv0jh" path="res://Assets/background.png" id="6_b2krm"]
 [ext_resource type="PackedScene" uid="uid://d0pe6m1p3epgf" path="res://Scenes/player.tscn" id="7_qrwgb"]
-[ext_resource type="PackedScene" uid="uid://bh4inugiarp1c" path="res://level_exit.tscn" id="8_adv88"]
 [ext_resource type="PackedScene" uid="uid://dpm22a3kg7tjr" path="res://RectangleOfDoomAndDespair.tscn" id="9_r7uni"]
+[ext_resource type="AudioStream" uid="uid://6evdvx6l74ul" path="res://Assets/Audio/Win sound acapela.wav" id="10_j2suw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgosu"]
 texture = ExtResource("3_j2suw")
@@ -55,6 +55,46 @@ margins = Vector2i(2, 2)
 sources/0 = SubResource("TileSetAtlasSource_8gbba")
 sources/1 = SubResource("TileSetAtlasSource_ng020")
 
+[sub_resource type="Animation" id="Animation_j2suw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oxods"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0rukg"]
+_data = {
+&"RESET": SubResource("Animation_j2suw"),
+&"fade": SubResource("Animation_oxods")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxovr"]
+size = Vector2(60, 106)
+
 [node name="level10" type="Node2D" unique_id=490043751]
 script = ExtResource("1_etsvn")
 
@@ -80,14 +120,8 @@ tile_map_data = PackedByteArray("AAANAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAALAAEAAAAAAAA
 tile_set = SubResource("TileSet_ect8u")
 
 [node name="player" parent="." unique_id=1501933892 instance=ExtResource("7_qrwgb")]
-z_index = 100
+z_index = 4
 position = Vector2(240, 815)
-
-[node name="level_exit" parent="." unique_id=550035921 instance=ExtResource("8_adv88")]
-z_index = 4096
-position = Vector2(1842, 319)
-rotation = 0.0
-next_scene = "res://Scenes/level2.tscn"
 
 [node name="Node2D" parent="." unique_id=1582482459 instance=ExtResource("9_r7uni")]
 z_index = 1
@@ -106,3 +140,27 @@ z_index = 1
 position = Vector2(1427, 146.00005)
 rotation = 3.1489954
 scale = Vector2(8.65334, -3.8342803)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=386693902]
+stream = ExtResource("10_j2suw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=782793674]
+modulate = Color(0, 0, 0, 1)
+z_index = 5
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=557963424]
+libraries/ = SubResource("AnimationLibrary_0rukg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1664130137]
+position = Vector2(1842, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=967823370]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_sxovr")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

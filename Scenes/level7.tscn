@@ -67,7 +67,7 @@ texture = ExtResource("1_sr0ya")
 
 [node name="Door2" type="Sprite2D" parent="Node" unique_id=793656304]
 z_index = 10
-position = Vector2(1871.5001, 530.7501)
+position = Vector2(1863, 817)
 scale = Vector2(5.949997, 8.924995)
 texture = ExtResource("1_sr0ya")
 
@@ -102,6 +102,6 @@ scale = Vector2(17, 30)
 
 [node name="level_exit" parent="." unique_id=550035921 instance=ExtResource("8_54uab")]
 z_index = 4096
-position = Vector2(1819.9999, 795)
+position = Vector2(1819.9999, 1092)
 rotation = 0.0
-next_scene = "res://Scenes/level8.tscn"
+next_scene = "res://Scenes/level_8.tscn"
