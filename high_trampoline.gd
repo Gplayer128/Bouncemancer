@@ -1,9 +1,19 @@
 extends RigidBody2D
 
-@export var bounce_force: float = 1500.0
-@export var horizontal_multiplier: float = 0.3
+@onready var timer: Timer = $Timer
+
+@export var bounce_force: float = 1000
+@export var horizontal_multiplier: float = 0.75
+
+var can_bounce = true
+
+func _on_timer_timeout() -> void:
+	can_bounce = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D:
+	if body is CharacterBody2D and can_bounce:
+		can_bounce = false
+		timer.start()
+
 		body.velocity.y = -bounce_force
 		body.speed_multiplier = horizontal_multiplier
