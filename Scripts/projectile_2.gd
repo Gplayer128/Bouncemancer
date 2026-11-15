@@ -2,7 +2,7 @@ extends Area2D
 
 @export var speed: float = 500.0
 
-var trampoline_inst = preload("res://HighTrampoline.tscn")
+var trampoline_instance = preload("res://HighTrampoline.tscn")
 
 var num
 var hit_wall : bool
@@ -44,7 +44,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		anim_player.play("hit2")
 		num += 1
 	else:
-		var instantiated_node = trampoline_inst.instantiate()
+		var instantiated_node = trampoline_instance.instantiate()
 		get_tree().current_scene.add_child(instantiated_node)
 		instantiated_node.global_position = global_position
 		queue_free()

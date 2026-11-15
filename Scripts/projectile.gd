@@ -5,7 +5,7 @@ extends Area2D
 var trampoline_inst = preload("res://trampoline.tscn")
 
 var num
-var hit_wall : bool
+var hit_wall : bool 
 var second_anim : bool
 
 @onready var anim_player : AnimatedSprite2D = $AnimatedSprite2D

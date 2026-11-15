@@ -6,19 +6,20 @@ extends CharacterBody2D
 
 var dir_start: Vector2
 
-var max_trampo : int
-
 var speed_multiplier: float = 1.0
+
+var limit_set : bool
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
 
 func _ready() -> void:
-	max_trampo = Global.max_trampo
+	limit_set = false
 	bullet_manager_var = get_tree().get_root().get_node("/root/BulletManager")
 
 func _process(delta: float) -> void:
 	# Use global_position to match global mouse coordinates
+
 	dir_start = player.global_position
 	
 	if Input.is_action_just_pressed("Restart"):
@@ -56,13 +57,11 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if max_trampo > 0:
-		max_trampo -= 1
-		if event.is_action_pressed("1"):
-			Global.player_pos = player.global_position
-			Global.bullet_dir = get_global_mouse_position() - player.global_position
-			bullet_manager_var.shoot1()
-		elif event.is_action_pressed("2"):
-			Global.player_pos = player.global_position
-			Global.bullet_dir = get_global_mouse_position() - player.global_position
-			bullet_manager_var.shoot2()
+	if event.is_action_pressed("1"):
+		Global.player_pos = player.global_position
+		Global.bullet_dir = get_global_mouse_position() - player.global_position
+		bullet_manager_var.shoot1()
+	elif event.is_action_pressed("2"):
+		Global.player_pos = player.global_position
+		Global.bullet_dir = get_global_mouse_position() - player.global_position
+		bullet_manager_var.shoot2()
