@@ -10,6 +10,8 @@ var second_anim : bool
 
 @onready var anim_player : AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 var dir : float
 var spawnPos : Vector2
 var spawnRot : float
@@ -22,6 +24,9 @@ func _ready() -> void:
 	global_rotation = spawnRot 
 
 func _physics_process(delta: float) -> void:
+	if !audio_stream_player_2d.playing:
+		audio_stream_player_2d.play()
+	
 	if !hit_wall:
 		var movement_vector = Vector2.RIGHT.rotated(dir) * speed
 		position += movement_vector * delta

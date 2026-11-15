@@ -4,7 +4,9 @@ extends CharacterBody2D
 @onready var anim_sprite: AnimatedSprite2D = $anim_sprite
 @onready var player: Marker2D = $player
 @onready var bullet_manager_var = get_parent().get_child(0) as bullet_manager
+
 @onready var spell: AudioStreamPlayer2D = $spell
+@onready var death: AudioStreamPlayer2D = $death
 
 var dir_start: Vector2
 
@@ -84,3 +86,6 @@ func _input(event: InputEvent) -> void:
 		Global.player_pos = player.global_position
 		Global.bullet_dir = get_global_mouse_position() - player.global_position
 		bullet_manager_var.shoot2()
+
+func die():
+	death.play()
