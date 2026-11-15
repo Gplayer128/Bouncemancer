@@ -2,10 +2,10 @@ extends Area2D
 
 @export var speed: float = 500.0
 
-var trampoline_instance = preload("res://HighTrampoline.tscn")
+var trampoline_inst = preload("res://HighTrampoline.tscn")
 
 var num
-var hit_wall : bool
+var hit_wall : bool 
 var second_anim : bool
 
 @onready var anim_player : AnimatedSprite2D = $AnimatedSprite2D
@@ -19,12 +19,10 @@ func _ready() -> void:
 	second_anim = false
 	hit_wall = false
 	global_position = spawnPos
-	global_rotation = spawnRot # Rotates the projectile to match the aiming angle
+	global_rotation = spawnRot 
 
 func _physics_process(delta: float) -> void:
-	# Only move if it hasn't hit a wall yet
 	if !hit_wall:
-		# Convert the angle (dir) into a directional vector and multiply by speed
 		var movement_vector = Vector2.RIGHT.rotated(dir) * speed
 		position += movement_vector * delta
 
@@ -44,7 +42,13 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		anim_player.play("hit2")
 		num += 1
 	else:
-		var instantiated_node = trampoline_instance.instantiate()
+		var instantiated_node = trampoline_inst.instantiate()
 		get_tree().current_scene.add_child(instantiated_node)
 		instantiated_node.global_position = global_position
+		
+		# Register with slot 1
+		var manager = get_tree().get_root().get_node("/root/BulletManager") # Or your group lookup
+		if manager and manager.has_method("register_trampoline_2"):
+			manager.register_trampoline_2(instantiated_node)
+			
 		queue_free()

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var anim_sprite: AnimatedSprite2D = $anim_sprite
 @onready var player: Marker2D = $player # Make sure this is your spawn marker
 @onready var bullet_manager_var = get_parent().get_child(0) as bullet_manager
+@onready var spell: AudioStreamPlayer2D = $spell
 
 var dir_start: Vector2
 
@@ -58,10 +59,12 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("1"):
+		spell.play()
 		Global.player_pos = player.global_position
 		Global.bullet_dir = get_global_mouse_position() - player.global_position
 		bullet_manager_var.shoot1()
 	elif event.is_action_pressed("2"):
+		spell.play()
 		Global.player_pos = player.global_position
 		Global.bullet_dir = get_global_mouse_position() - player.global_position
 		bullet_manager_var.shoot2()

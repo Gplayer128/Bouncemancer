@@ -6,7 +6,10 @@ class_name bullet_manager extends Node
 
 var old_one = null
 var old_one2 = null
-var active_trampoline = null # Tracks the currently spawned trampoline
+
+# Track each trampoline type separately
+var active_trampoline_1 = null
+var active_trampoline_2 = null
 
 func shoot1() -> void:
 	if old_one:
@@ -18,14 +21,20 @@ func shoot1() -> void:
 
 func shoot2() -> void:
 	if old_one2:
-		old_one2.queue_free() # Fixed: was calling old_one instead of old_one2
+		old_one2.queue_free() 
 	var instance2 = projectile2.instantiate()
 	old_one2 = instance2
 	instance2.setup(Global.bullet_dir.angle(), Global.player_pos, Global.bullet_dir.angle())
 	main.add_child.call_deferred(instance2)
 
-# Call this from your projectile when the trampoline spawns
-func register_trampoline(new_trampoline: Node) -> void:
-	if active_trampoline and is_instance_valid(active_trampoline):
-		active_trampoline.queue_free() # Destroy the old trampoline
-	active_trampoline = new_trampoline
+# Register Trampoline Type 1
+func register_trampoline_1(new_trampoline: Node) -> void:
+	if active_trampoline_1 and is_instance_valid(active_trampoline_1):
+		active_trampoline_1.queue_free()
+	active_trampoline_1 = new_trampoline
+
+# Register Trampoline Type 2
+func register_trampoline_2(new_trampoline: Node) -> void:
+	if active_trampoline_2 and is_instance_valid(active_trampoline_2):
+		active_trampoline_2.queue_free()
+	active_trampoline_2 = new_trampoline
