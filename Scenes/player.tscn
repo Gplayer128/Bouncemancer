@@ -83,4 +83,6 @@ shape = SubResource("CapsuleShape2D_vgqql")
 
 [node name="spell" type="AudioStreamPlayer2D" parent="." unique_id=935664630]
 
+[node name="death" type="AudioStreamPlayer2D" parent="." unique_id=2093005953]
+
 [connection signal="body_entered" from="TouchBox" to="." method="_on_touch_box_body_entered"]
