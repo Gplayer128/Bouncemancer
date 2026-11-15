@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://ceweltjfwkd8p"]
+[gd_scene format=4 uid="uid://d12gvxocqw53h"]
 
 [ext_resource type="Texture2D" uid="uid://c7550o7buqgpy" path="res://Assets/door.png" id="1_7u67b"]
 [ext_resource type="PackedScene" uid="uid://d0pe6m1p3epgf" path="res://Scenes/player.tscn" id="2_21ycj"]
@@ -71,7 +71,7 @@ position = Vector2(1864.0001, 443.00003)
 scale = Vector2(5, 7.5)
 texture = ExtResource("1_7u67b")
 
-[node name="player" parent="Node" unique_id=1501933892 groups=["player"] instance=ExtResource("2_21ycj")]
+[node name="player" parent="Node" unique_id=1501933892 instance=ExtResource("2_21ycj")]
 z_index = 100
 position = Vector2(143, 344)
 

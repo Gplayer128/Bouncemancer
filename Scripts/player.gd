@@ -79,7 +79,7 @@ func _input(event: InputEvent) -> void:
 		Global.bullet_dir = get_global_mouse_position() - player.global_position
 		bullet_manager_var.shoot1()
 
-	elif event.is_action_pressed("2"):
+	elif event.is_action_pressed("2") and Global.has_m2:
 		spell.play()
 		Global.player_pos = player.global_position
 		Global.bullet_dir = get_global_mouse_position() - player.global_position

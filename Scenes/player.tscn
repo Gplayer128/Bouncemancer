@@ -57,7 +57,7 @@ animations = [{
 "speed": 3.5
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=1689147481]
+[node name="player" type="CharacterBody2D" unique_id=1689147481 groups=["player"]]
 script = ExtResource("1_fkybt")
 
 [node name="bullet_manager" type="Node" parent="." unique_id=1218587809]

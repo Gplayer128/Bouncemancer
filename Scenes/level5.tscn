@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://crf8dt0sdv0jh" path="res://Assets/background.png" id="6_dpg5n"]
 [ext_resource type="Texture2D" uid="uid://v1yalflyxauv" path="res://Assets/locked_gate.png" id="7_mnpdm"]
 [ext_resource type="PackedScene" uid="uid://bh4inugiarp1c" path="res://level_exit.tscn" id="8_5jbms"]
-[ext_resource type="PackedScene" uid="uid://bfsw5upcnj7l4" path="res://trampoline.tscn" id="9_t6jbm"]
 [ext_resource type="Script" uid="uid://cidod2bgrc2qh" path="res://Scenes/gate.gd" id="10_o74cx"]
 [ext_resource type="Script" uid="uid://dmldcg6au7f34" path="res://Scenes/key.gd" id="11_dpg5n"]
 [ext_resource type="Texture2D" uid="uid://m2dik8p14kg6" path="res://Assets/key.png" id="12_csg1d"]
@@ -84,7 +83,7 @@ position = Vector2(1864.0001, 634)
 scale = Vector2(5, 7.5)
 texture = ExtResource("1_82ept")
 
-[node name="player" parent="Node" unique_id=1501933892 groups=["player"] instance=ExtResource("2_pmbmg")]
+[node name="player" parent="Node" unique_id=1501933892 instance=ExtResource("2_pmbmg")]
 z_index = 100
 position = Vector2(143, 344)
 
@@ -105,9 +104,6 @@ tile_set = SubResource("TileSet_ect8u")
 z_index = 4096
 position = Vector2(1819.9999, 904)
 rotation = 0.0
-
-[node name="Crate" parent="." unique_id=429924968 instance=ExtResource("9_t6jbm")]
-position = Vector2(406, 912)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2072758631]
 script = ExtResource("10_o74cx")
