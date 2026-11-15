@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dc5rjsicbtupl" path="res://crate.gd" id="1_cilbb"]
 [ext_resource type="Texture2D" uid="uid://cocpx4kor44dh" path="res://Assets/Trampoline/trampoline_green.png" id="2_iocah"]
-[ext_resource type="AudioStream" uid="uid://dlh8xd137sw3h" path="res://Assets/Audio/Boink.wav" id="3_iocah"]
+[ext_resource type="AudioStream" uid="uid://cmnrlkfwlo2m6" path="res://Assets/Audio/Boing.wav" id="3_iocah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo0jf"]
 size = Vector2(29.857979, 8.005916)

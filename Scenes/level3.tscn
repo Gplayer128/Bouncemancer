@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0pe6m1p3epgf" path="res://Scenes/player.tscn" id="5_h6p24"]
 [ext_resource type="PackedScene" uid="uid://bh4inugiarp1c" path="res://level_exit.tscn" id="6_vn7r1"]
 [ext_resource type="PackedScene" uid="uid://dpm22a3kg7tjr" path="res://RectangleOfDoomAndDespair.tscn" id="7_csbjj"]
+[ext_resource type="AudioStream" uid="uid://ca42ttgb0f5hr" path="res://Assets/Audio/Yoda_death_a_capela1.wav" id="9_h3ll2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgosu"]
 texture = ExtResource("2_1x0xh")
@@ -97,3 +98,6 @@ z_index = 4096
 position = Vector2(1819.9999, 795)
 rotation = 0.0
 next_scene = "res://Scenes/level4.tscn"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1125680038]
+stream = ExtResource("9_h3ll2")
