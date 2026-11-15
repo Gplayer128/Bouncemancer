@@ -148,7 +148,7 @@ alignment = 0
 
 [node name="Label" type="Label" parent="." unique_id=477609693]
 layout_mode = 0
-offset_left = 873.0
+offset_left = 1173.0
 offset_top = 111.0
 offset_right = 1773.0
 offset_bottom = 231.0
@@ -158,7 +158,7 @@ theme_override_colors/font_outline_color = Color(0.6271761, 0.36790693, 0, 1)
 theme_override_constants/outline_size = 25
 theme_override_fonts/font = ExtResource("1_tt5f1")
 theme_override_font_sizes/font_size = 100
-text = "[INSERT NAME HERE]"
+text = "Bouncemancer"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1383378122]
 z_index = -2
