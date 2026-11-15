@@ -81,4 +81,6 @@ animation = &"walk"
 position = Vector2(0, -0.25)
 shape = SubResource("CapsuleShape2D_vgqql")
 
+[node name="spell" type="AudioStreamPlayer2D" parent="." unique_id=935664630]
+
 [connection signal="body_entered" from="TouchBox" to="." method="_on_touch_box_body_entered"]
