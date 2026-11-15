@@ -88,7 +88,7 @@ position = Vector2(230, 814)
 z_index = 4096
 position = Vector2(1842, 897.99994)
 rotation = 0.0
-next_scene = "res://Scenes/level2.tscn"
+next_scene = "res://Scenes/level9.tscn"
 
 [node name="Node2D" parent="." unique_id=1582482459 instance=ExtResource("8_ry3a7")]
 z_index = 1

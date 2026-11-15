@@ -104,4 +104,4 @@ scale = Vector2(17, 30)
 z_index = 4096
 position = Vector2(1819.9999, 795)
 rotation = 0.0
-next_scene = "res://Scenes/level4.tscn"
+next_scene = "res://Scenes/level8.tscn"
