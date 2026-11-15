@@ -4,6 +4,8 @@ extends Area2D
 
 var trampoline_inst = preload("res://trampoline.tscn")
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 var num
 var hit_wall : bool 
 var second_anim : bool
@@ -22,6 +24,8 @@ func _ready() -> void:
 	global_rotation = spawnRot 
 
 func _physics_process(delta: float) -> void:
+	if !audio_stream_player_2d.playing:
+		audio_stream_player_2d.play()
 	if !hit_wall:
 		var movement_vector = Vector2.RIGHT.rotated(dir) * speed
 		position += movement_vector * delta
@@ -38,7 +42,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if num == 0:
-		position += Vector2(-60.0, 0.0)
 		anim_player.play("hit2")
 		num += 1
 	else:
